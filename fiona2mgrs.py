@@ -11,11 +11,11 @@ def printMGRS(coords):
             printMGRS(elt)
         print("]")
     elif isinstance(coords, tuple):
-        print(latlon2mgrs(coords[0], coords[1]))
+        print(lonlat2mgrs(coords[0], coords[1]))
     else:
         return
 
-def latlon2mgrs(lat, lon):
+def lonlat2mgrs(lon, lat):
     return mgrs.MGRS().toMGRS(lat, lon)
 
 def fiona2mgrs(infile, outfile):
